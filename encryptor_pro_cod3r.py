@@ -184,7 +184,7 @@ class Encryptor():
 # executar somente a linha acima, copiar o dado do terminal e salvar em uma variável, como feito abaixo
 
 # dado aleatório de tamanho 256 bits
-salt = b'\xfa\x01\x86\x8c\x84\xcdE\xac\x0e\xc4\xdeO\xfc\x14\xd3\xc7^\x7f\xab\x96\xear\x0c\xb8\x1e\xe8</\xf9\xa3\xcc\xff'
+salt = b'f\x9c\xea\x8f\xce\x1b\x89\xe3\xc8\xad,\n8\xa0M\xbbsj\xe2\x8e\xe7\\\xeb\xa3\xbfMo\x16\xcd\xcc\xbf_'
 
 # arquivo usado para guardar a senha de acesso
 file_txt = 'data_enc.txt'
