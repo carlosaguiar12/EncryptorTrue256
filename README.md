@@ -1,8 +1,5 @@
 ---
 
-
----
-
 <h1 id="encryptortrue256">EncryptorTrue256</h1>
 <h2 id="proposta">Proposta:</h2>
 <p>O <strong>EncryptorTrue256</strong> tem o propósito de criar proteção do tipo <em>confidencialidade</em> sobre os dados.</p>
