@@ -179,7 +179,7 @@ class Encryptor():
                     self.decrypt_files(item)
                 print()
 
-# ==== gerando dado aleatório (salt) ==== #
+# ===== gerando dado aleatório (salt) ===== #
 # salt = get_random_bytes(32)  # 32 bytes => 256 bits
 # executar somente a linha acima, copiar o dado do terminal e salvar em uma variável, como feito abaixo
 
