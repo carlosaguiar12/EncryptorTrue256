@@ -1,8 +1,5 @@
 ---
 
-
----
-
 <h1 id="encryptortrue256">EncryptorTrue256</h1>
 <h2 id="tópicos">Tópicos</h2>
 <ol>
