@@ -44,6 +44,9 @@
 <p><strong>Criptografia é a prática de codificar e decodificar dados.</strong> Quando os dados são criptografados, é aplicado um algoritmo para codificá-los de modo que eles não tenham mais o formato original e, portanto, não possam ser lidos. Os dados só podem ser decodificados ao formato original com o uso de uma chave de decriptografia específica.<br>
 <em>[Fonte: <a href="https://www.kaspersky.com.br/resource-center/definitions/encryption">Kaspersky</a>]</em></p>
 <h2 id="instalação-das-ferramentas">3. Instalação das ferramentas</h2>
+<blockquote>
+<p>Nota: a adição de variáveis de ambiente (presente nesta seção) usando o Anaconda pode resultar em erros (o que nem de longe é o fim do mundo para a sua máquina — há diversos <em>posts</em> tratando desse assunto de forma isolada e mostrando como resolver). Mas mesmo assim, considere sua responsabilidade e resolva os seus erros, caso apareçam.</p>
+</blockquote>
 <h3 id="a.-anaconda">3.a. Anaconda</h3>
 <p>O <em>Anaconda</em> é uma poderosa solução tecnológica para a Ciência de Dados e pode abranger as linguagens <em>Python</em> e <em>R</em>, contendo ferramentas potentes para a análise de dados.</p>
 <p>Mas aqui a usaremos para criar e gerenciar <em>Ambientes virtuais</em> com praticidade (veja mais detalhes no subtópico <strong>3.a.c.</strong>).</p>
@@ -52,6 +55,9 @@
 <blockquote>
 <p>Exemplo para leigos’: <em>"O meu computador é Windows, 64 Bits, então no site de download eu escolho o Instalador que se parece com isso</em> — <strong>Windows 64-Bit Graphical Installer (466 MB)</strong>".</p>
 </blockquote>
+<p>Prossiga com a instalação clássica’: <em>next, next, next</em>, e lembre-se de deixar marcadas as opções que contém <em>Recommended</em>.</p>
+<p>A escolha do local de instalação é opcional, mas é recomendado <strong>não alterar a pasta de instalação</strong>, porque está sujeito a conflitos.</p>
+<p>Por fim, marque a opção <strong>Add Anaconda to my PATH environment variable</strong> (mesmo que apareça <em>not recommended</em> na descrição), porque só assim será possível usar o Anaconda no Prompt, Git Bash, etc.</p>
 <h3 id="a.c.-criação-e-detalhes-sobre-ambientes-virtuais">3.a.c. Criação e detalhes sobre ambientes virtuais</h3>
 <blockquote>
 <p>Ambientes Virtuais podem ser encarados como uma <em>“caixa”</em> onde código é executado. Por exemplo: suponha que você tem a versão padrão do Python instalada na sua máquina e quer testar novas bibliotecas, mas aí surgem alguns <em>problemas</em>, como:</p>
