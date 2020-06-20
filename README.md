@@ -27,7 +27,7 @@
 </code></pre>
 </li>
 <li>
-<p>Exemplos de Encriptação/Decriptação</p>
+<p>AES e modo de operação CBC</p>
 </li>
 <li>
 <p>Criador</p>
@@ -53,7 +53,83 @@
 <blockquote>
 <p>Exemplo para leigos’: <em>"O meu computador é Windows, 64 Bits, então no site de download eu escolho o Instalador que se parece com isso</em> — <strong>Windows 64-Bit Graphical Installer (466 MB)</strong>".</p>
 </blockquote>
-<h2 id="exemplos-de-encriptaçãodecriptação">4. Exemplos de Encriptação/Decriptação</h2>
+<h3 id="a.c.-criação-e-detalhes-sobre-ambientes-virtuais">3.a.c. Criação e detalhes sobre ambientes virtuais</h3>
+<blockquote>
+<p>Ambientes Virtuais podem ser encarados como uma <em>“caixa”</em> onde código é executado. Por exemplo: suponha que você tem a versão padrão do Python instalada na sua máquina e quer testar novas bibliotecas, mas aí surgem alguns <em>problemas</em>, como:</p>
+</blockquote>
+<ul>
+<li>
+<p>A biblioteca que eu quero instalar funciona na versão 3.4 do Python, mas eu tenho apenas a versão 3.7 instalada. E agora? Tenho que desinstalar tudo para adicionar uma única biblioteca?</p>
+</li>
+<li>
+<p>Eu quero criar um projeto novo, mas seria péssimo se as versões de uma mesma biblioteca colidissem entre si ou se houvesse alguma confusão no momento de importar os módulos, porque se existem dois módulos <em>Biblioteca V1.0</em> e <em>Biblioteca V4.6</em> pode acontecer o seguinte conflito:</p>
+<blockquote>
+<p>from Biblioteca.Classe import método<br>
+método(parâmetro)<br>
+…<br>
+<strong>SyntaxError</strong></p>
+</blockquote>
+<blockquote>
+<p>O erro de sintaxe acima pode ter ocorrido porque no ambiente e projeto em que você estava executando o código houve uma confusão entre as versões 1.0 e 4.6 instaladas no mesmo lugar que continham o mesmo <strong>método</strong> usado no exemplo acima, cada um implementado de uma forma diferente do outro. Você gostaria que a sintaxe da versão 4.6 fosse executada, mas isso não ocorreu.</p>
+</blockquote>
+</li>
+</ul>
+<p>Isso tudo pode ser facilmente resolvido usando <strong>Ambientes Virtuais</strong>, que contêm versões isoladas do Python. E então se algo não sair como esperado, deletamos o ambiente e criamos outro, sem que nada interfira no lado de fora da nossa <em>“caixa”</em>. Faz sentido?</p>
+<h3 id="criando-ambientes-virtuais-usando-o-anaconda">Criando Ambientes Virtuais usando o Anaconda</h3>
+<p>A sintaxe é simples, algo como:<br>
+<code>conda create --name ENV_NAME python=x.x</code></p>
+<p>Sendo <em>ENV_NAME</em> justamente o nome do seu ambiente e <em>x.x</em> a versão do Python.</p>
+<p><strong>Exemplo:</strong><br>
+<code>conda create --name py37 python=3.7</code></p>
+<p>Ao fazer o comando acima, será necessário confirmar algumas etapas no Prompt (ou Terminal).</p>
+<p>Mas também pode-se fazer direto usando essa sintaxe:<br>
+<code>conda create --name py37 python=3.7 -y</code></p>
+<p>( <em>-y</em> irá dizer Yes/Sim em todas as etapas e criar o ambiente ).</p>
+<h3 id="deletando-um-ambiente-virtual-usando-o-anaconda">Deletando um Ambiente Virtual usando o Anaconda</h3>
+<p><code>conda env remove --name ENV_NAME</code></p>
+<p>Sendo <em>ENV_NAME</em> o nome usado no ambiente que você deseja deletar.</p>
+<p><strong>Exemplo:</strong></p>
+<p><code>conda env remove --name py37</code></p>
+<h3 id="comandos-úteis-no-anaconda">Comandos úteis no Anaconda:</h3>
+<ul>
+<li><em>Listando os Ambientes Virtuais</em>:
+<blockquote>
+<p>conda env list</p>
+</blockquote>
+</li>
+</ul>
+<p><em>Na versão conda 4.6+ (funcionando no Windows, Linux e macOS)</em></p>
+<ul>
+<li>
+<p>[ativando um Ambiente Virtual]</p>
+<blockquote>
+<p><strong>conda activate ENV_NAME</strong></p>
+</blockquote>
+</li>
+<li>
+<p>[saindo do Ambiente Virtual]</p>
+<blockquote>
+<p><strong>conda deactivate</strong></p>
+</blockquote>
+</li>
+</ul>
+<p><em>Para versões anteriores ao conda 4.6, usar os seguintes comandos:</em></p>
+<blockquote>
+<p><em>Windows</em>: <strong>activate ENV_NAME</strong> &amp; <strong>deactivate</strong> (para ativar e desativar Ambientes, respectivamente).</p>
+</blockquote>
+<blockquote>
+<p><em>Linux e macOS</em>: <strong>source activate ENV_NAME</strong> &amp; <strong>source deactivate</strong></p>
+</blockquote>
+<h3 id="b.-instalando-a-biblioteca-pycryptodome">3.b. Instalando a biblioteca Pycryptodome</h3>
+<p><em>[Ative o seu ambiente (suponho que já tenha criado um) e faça o seguinte comando]</em>:</p>
+<p><code>pip install pycryptodome</code></p>
+<p><em>E se a instalação não sair como o esperado, baixe um pacote Wheel com tudo pronto. [considere a versão do Python que você pretende usar no ambiente, Sistema Operacional e Arquitetura do Computador (32/64bits) ao escolher o download].</em><br>
+<a href="https://pypi.org/project/pycryptodome/#files">PYPI | Pycryptodome Downloads</a></p>
+<p><em>E instale via pip, fazendo:</em></p>
+<p>No Prompt/Terminal, navegue até a pasta em que o arquivo <em>Pycryptodome</em> está e insira o comando <em>pip install</em>, em seguida, copie e cole o nome do arquivo Pycryptodome (não esqueça a extensão .whl):</p>
+<p><strong>Exemplo com o Pycryptodome para o Windows, 64 bits e Python 3.7:</strong></p>
+<p><code>pip install pycryptodome-3.9.7-cp37-cp37m-win_amd64.whl</code></p>
+<h2 id="aes-e-modo-de-operação-cbc">4. AES e modo de operação CBC</h2>
 <h3 id="criptografia-aes-mode_cbc">Criptografia AES, MODE_CBC:</h3>
 <blockquote>
 <p><strong>AES</strong> significa <em>Advanced Encryption Standard</em> — é um padrão de <strong>criptografia</strong> avançada, estabelecida pelo Instituto Nacional de Padrões e Tecnologia (NIST) dos EUA em 2001.</p>
@@ -61,72 +137,6 @@
 <blockquote>
 <p><strong>MODE_CBC</strong> refere-se ao <strong>modo de operação</strong> em que a cifra trabalha com blocos de dados de tamanho fixo, podendo receber <em>mensagens</em> de qualquer comprimento.</p>
 </blockquote>
-<h3 id="criptografando----exemplo-i">Criptografando  /  Exemplo I:</h3>
-<pre class=" language-python"><code class="prism  language-python"><span class="token comment">#importações</span>
-<span class="token keyword">import</span> os
-<span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Cipher <span class="token keyword">import</span> AES
-<span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>Padding <span class="token keyword">import</span> pad
-
-<span class="token comment">#Chave de exemplo (JAMAIS compartilhe ou perca a sua Chave Real)</span>
-key <span class="token operator">=</span> b<span class="token string">'f\x9c\xea\x8f\xce\x1b\x89\xe3\xc8\xad,\n8\xa0M\xbbsj\xe2\x8e\xe7\\\xeb\xa3\xbfMo\x16\xcd\xcc\xbf_'</span>
-
-<span class="token comment">#insira o caminho de um arquivo para teste</span>
-file_name <span class="token operator">=</span> <span class="token string">'insira_aqui_um_arquivo.txt'</span>
-
-<span class="token comment">#lendo o arquivo como sequência binária</span>
-<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>file_name<span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> file_object<span class="token punctuation">:</span>
-    plaintext <span class="token operator">=</span> file_object<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># conteúdo do arquivo</span>
-
-<span class="token comment">#criando um objeto cifra com a chave no MODE_CBC</span>
-cipher <span class="token operator">=</span> AES<span class="token punctuation">.</span>new<span class="token punctuation">(</span>key<span class="token punctuation">,</span> AES<span class="token punctuation">.</span>MODE_CBC<span class="token punctuation">)</span>  <span class="token comment"># inicialização da criptografia</span>
-
-<span class="token comment">#==== criptografando os dados ====#</span>
-data_ciphered <span class="token operator">=</span> cipher<span class="token punctuation">.</span>encrypt<span class="token punctuation">(</span>pad<span class="token punctuation">(</span>plaintext<span class="token punctuation">,</span> AES<span class="token punctuation">.</span>block_size<span class="token punctuation">)</span><span class="token punctuation">)</span>
-  
-<span class="token comment">#adicionando a extensão '.enc' no arquivo</span>
-<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>file_name <span class="token operator">+</span> <span class="token string">'.enc'</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> file_object<span class="token punctuation">:</span>
-    <span class="token comment">#escrevendo o vetor de inicialização e os dados encriptados no arquivo</span>
-    file_object<span class="token punctuation">.</span>write<span class="token punctuation">(</span>cipher<span class="token punctuation">.</span>iv<span class="token punctuation">)</span>
-    file_object<span class="token punctuation">.</span>write<span class="token punctuation">(</span>data_ciphered<span class="token punctuation">)</span>
-
-<span class="token comment">#deletando o arquivo original</span>
-os<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>file_name<span class="token punctuation">)</span>
-</code></pre>
-<blockquote>
-<p>Dica: você colocar os códigos de exemplo dentro de uma função e receber vários arquivos por meio de iterações/<em>loops</em>. [ Veja o código completo no repositório para mais detalhes | arquivo: encryptor_pro_cod3r.py ].</p>
-</blockquote>
-<h3 id="descriptografando--exemplo-ii">Descriptografando / Exemplo II:</h3>
-<pre class=" language-python"><code class="prism  language-python"><span class="token comment">#importações</span>
-<span class="token keyword">import</span> os
-<span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Cipher <span class="token keyword">import</span> AES
-<span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>Padding <span class="token keyword">import</span> unpad
-
-<span class="token comment">#Chave de exemplo (JAMAIS compartilhe ou perca a sua Chave Real)</span>
-key <span class="token operator">=</span> b<span class="token string">'f\x9c\xea\x8f\xce\x1b\x89\xe3\xc8\xad,\n8\xa0M\xbbsj\xe2\x8e\xe7\\\xeb\xa3\xbfMo\x16\xcd\xcc\xbf_'</span>
-
-<span class="token comment">#Insira um arquivo encriptado</span>
-file_name <span class="token operator">=</span> <span class="token string">'insira_um_arquivo_aqui.enc'</span>
-
-<span class="token comment">#lendo o arquivo como sequência binária</span>
-<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>file_name<span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> file_object<span class="token punctuation">:</span>
-    <span class="token comment">#vetor de inicialização com os 16 bytes necessários</span>
-    iv <span class="token operator">=</span> file_object<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span>
-    <span class="token comment">#leitura do resto dos dados</span>
-    data_ciphered <span class="token operator">=</span> file_object<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token comment">#criando um objeto cifra com a chave no MODE_CBC</span>
-cipher <span class="token operator">=</span> AES<span class="token punctuation">.</span>new<span class="token punctuation">(</span>key<span class="token punctuation">,</span> AES<span class="token punctuation">.</span>MODE_CBC<span class="token punctuation">,</span> iv<span class="token operator">=</span>iv<span class="token punctuation">)</span>  <span class="token comment"># inicialização da criptografia</span>
-
-<span class="token comment">#dados restaurados prontos para a saída</span>
-data_restore <span class="token operator">=</span> unpad<span class="token punctuation">(</span>cipher<span class="token punctuation">.</span>decrypt<span class="token punctuation">(</span>data_ciphered<span class="token punctuation">)</span><span class="token punctuation">,</span> AES<span class="token punctuation">.</span>block_size<span class="token punctuation">)</span>
-
-<span class="token comment">#reescrevendo o arquivo sem a extensão '.enc'</span>
-<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>file_name<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> file_object<span class="token punctuation">:</span>
-    file_object<span class="token punctuation">.</span>write<span class="token punctuation">(</span>data_restore<span class="token punctuation">)</span>
-
-<span class="token comment">#deletando o arquivo original</span>
-os<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>file_name<span class="token punctuation">)</span>
-</code></pre>
 <h2 id="criador">5. Criador:</h2>
 <h4 id="pro.cod3r-instagram"><a href="https://instagram.com/pro.cod3r">PRO.COD3R</a> <em>(Instagram)</em></h4>
 </div>
