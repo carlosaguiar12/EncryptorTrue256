@@ -204,7 +204,7 @@ método(parâmetro)<br>
 <p><strong>MODE_CBC</strong> refere-se ao <strong>modo de operação</strong> em que a cifra trabalha com blocos de dados de tamanho fixo, podendo receber <em>mensagens</em> de qualquer comprimento.</p>
 </blockquote>
 <h2 id="criador">5. Criador:</h2>
-<h4 id="pro.cod3r-instagram"><a href="https://instagram.com/pro.cod3r">PRO.COD3R</a> <em>(Instagram)</em></h4>
+<h4 id="humanodev-instagram"><a href="https://instagram.com/humanodev">humanodev</a> <em>(Instagram)</em></h4>
 </div>
 </body>
 
