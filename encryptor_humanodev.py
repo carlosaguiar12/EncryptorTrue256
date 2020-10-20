@@ -118,7 +118,7 @@ class Encryptor():
         for item in args:
             for p, _, files in os.walk(os.path.abspath(item)):
                 for file in files:
-                    if file != 'encryptor_pro_cod3r.py' and file != 'data_enc.txt.enc' \
+                    if file != 'encryptor_humanodev.py' and file != 'data_enc.txt.enc' \
                         and file != 'EncryptorTrue256.exe':
 
                         dirs.append(os.path.join(p, file))
@@ -216,7 +216,7 @@ file_txt = 'data_enc.txt'
 # se não existir, será criado o arquivo e uma nova senha para acesso
 if not (os.path.isfile(file_txt) or os.path.isfile(file_txt + '.enc')):
 
-    print('\n==== EncryptorTrue256  [ @PRO.COD3R ]  ====')
+    print('\n==== EncryptorTrue256  [ @humanodev ]  ====')
     while True:
         """Criação e validação de uma nova senha para acesso."""
 
@@ -248,7 +248,7 @@ if not (os.path.isfile(file_txt) or os.path.isfile(file_txt + '.enc')):
 
 # neste ponto o arquivo com a senha de acesso já existe
 else:
-    print("\n==== EncryptorTrue256  [ @PRO.COD3R ]  ====")
+    print("\n==== EncryptorTrue256  [ @humanodev ]  ====")
 
     # lendo a senha de acesso
     password = stdiomask.getpass(prompt='\n=> Senha: ')
