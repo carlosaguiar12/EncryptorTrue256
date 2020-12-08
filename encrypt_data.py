@@ -36,7 +36,6 @@ def encrypt_data(file_name, key):
 				os.remove(file_name)
 
 			except ValueError:
-				# Adicionar arquivo para mostrar os erros
 				pass
 
 			else:
