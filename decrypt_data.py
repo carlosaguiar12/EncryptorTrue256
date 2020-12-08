@@ -50,10 +50,6 @@ def decrypt_data(file_name, key):
                     os.system(f"Taskkill /PID {os.getppid()} /F")
                     sys.exit(0)
 
-                else:
-                    # Escrever arquivo de erros
-                    pass
-
             else:
                 # Mostra que a decriptação ocorreu com sucesso
                 if file_name != "DATA_GHOST.txt.enc":

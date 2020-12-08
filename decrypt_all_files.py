@@ -6,6 +6,7 @@ from decrypt_data import decrypt_data
 
 
 def decrypt_all_files(key):
+	"""Decripta todos os arquivos de uma ou mais raízes."""
 	__roots__ = insert_user_roots(index_option=1)
 
 	if len(__roots__) > 0:

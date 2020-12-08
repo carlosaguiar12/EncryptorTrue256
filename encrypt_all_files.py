@@ -6,6 +6,7 @@ from encrypt_data import encrypt_data
 
 
 def encrypt_all_files(key):
+    """Encripta todos os arquivos de uma ou mais raízes."""
     __roots__ = insert_user_roots(index_option=0)
 
     if len(__roots__) > 0:
