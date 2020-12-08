@@ -9,7 +9,7 @@ from decrypt_all_files import decrypt_all_files
 
 
 def options_menu(key):
-    """..."""
+    """Cria um menu de escolhas para o ET256."""
 
     while True:
         print("""
