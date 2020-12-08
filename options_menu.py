@@ -59,14 +59,5 @@ def options_menu(key):
                     os.system(f"Taskkill /PID {os.getppid()} /F")
                     sys.exit(0)
 
-            # Verificando a existência de erros
-            # if len(crypt.list_errors) > 0:
-            #	print('\n => Um ou mais arquivos não puderam ser processados.\n')
-            #	# percorrendo a lista de erros e imprimindo-os na tela
-            #	for error in crypt.list_errors:
-            #		print(error)
-            #	print()
-            #	# limpando a lista no final do processo para não haver redundâncias
-            #	crypt.list_errors.clear()
             else:
                 print("Opção inválida! Apenas 1, 2, 3, 4 ou 99.")
